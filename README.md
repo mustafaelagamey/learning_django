@@ -20,8 +20,9 @@
 ##### Running the server
 `python manage.py runserver`
 
-##### Next Command
-``
+##### Start New App
+`python manage.py startapp appname`
+
 
 
 
