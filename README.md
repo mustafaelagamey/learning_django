@@ -4,6 +4,7 @@
 <!-- MarkdownTOC -->
 
 * ### [Terminal Commands](#teminal-commands)
+* ### [Code](#code)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -25,4 +26,21 @@
 
 
 
+### Code<a id="code"></a>
+##### Add function view
+1. Views.py , Add function that receive request object and return HttpResponse object
+    ```
+    def index(request):
+        return HttpResponse('Challenges Page')
+    ```
 
+2. Add URL 
+    ```
+   urlpatterns = [path("", views.index)] #app.urls
+   
+   path('app/', include("app.urls")) #project.urls
+   ```
+   
+
+    
+    
