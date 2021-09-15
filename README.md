@@ -63,6 +63,15 @@
         def fn(request):
             return HttpResponseNotFound(challenge)
     ```
+   
+##### Dynamic link parameter transformation
+1. In urls definition just use \<type:parameter> 
+    ```
+    path("<int:month>", views.month_challenge_by_number),
+    path("<str:month>", views.month_challenge),
+    ```
+   * Note : In django try to transform parameter by order , For this example if system transform month to int if it cannot do that , it moves to second url 
+   * If we reversed the order , the system will access str directly even if passing integer
 
 
    
