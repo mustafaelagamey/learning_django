@@ -73,7 +73,14 @@
    * Note : In django try to transform parameter by order , For this example if system transform month to int if it cannot do that , it moves to second url 
    * If we reversed the order , the system will access str directly even if passing integer
 
-
+    
+##### Add redirect response
+1. In view function just return 
+    ```
+        def fn(request):
+            return HttpResponseRedirect("url")
+    ```
+   
    
 
     

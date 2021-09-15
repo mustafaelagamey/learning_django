@@ -1,5 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 MONTHS_CHALLENGES = {
     'january':'Jan challenge',
@@ -17,6 +16,7 @@ MONTHS_CHALLENGES = {
 }
 month_numbers = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'August', 'september', 'october',
                  'november', 'december']
+months_shorts = [mon[:3] for mon in month_numbers]
 # Create your views here.
 
 def index(request):
@@ -26,7 +26,11 @@ def index(request):
 def month_challenge(request,month):
     challenge = MONTHS_CHALLENGES.get(month)
     if not challenge:
-        return HttpResponseNotFound("Unknown month")
+        try:
+            month_number = months_shorts.index(month) + 1
+            return HttpResponseRedirect(f"/challenges/{month_number}")
+        except ValueError:
+            return HttpResponseNotFound("Unknown month")
     return HttpResponse(challenge)
 
 
