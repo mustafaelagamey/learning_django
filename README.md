@@ -42,5 +42,19 @@
    ```
    
 
+##### Add dynamic link
+1. Views.py , Add function that receive request object and url parameter and return HttpResponse object
+    ```
+        def month_challenge(request,month):
+            challenge = MONTHS_CHALLENGES.get(month)
+            return HttpResponse(challenge)
+    ```
+
+2. Add URL 
+    ```
+       path("<parameter>", views.month_challenge)
+   ```
+   
+
     
     
