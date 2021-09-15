@@ -1,4 +1,5 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
 MONTHS_CHALLENGES = {
     'january':'Jan challenge',
@@ -28,7 +29,7 @@ def month_challenge(request,month):
     if not challenge:
         try:
             month_number = months_shorts.index(month) + 1
-            return HttpResponseRedirect(f"/challenges/{month_number}")
+            return HttpResponseRedirect(reverse('month-ch-by-int',args=[month_number]))
         except ValueError:
             return HttpResponseNotFound("Unknown month")
     return HttpResponse(challenge)

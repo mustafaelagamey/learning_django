@@ -81,7 +81,10 @@
             return HttpResponseRedirect("url")
     ```
    
-   
-
-    
-    
+       
+##### Add named route
+1. In urls pass name to path function and use django.urls.reverse in view
+    ```
+        path("<str:month>", views.month_challenge, name='month-ch') #app.urls
+        reverse('month-ch-by-int',args=[month_number]) # resolve route name in views.py
+    ```
