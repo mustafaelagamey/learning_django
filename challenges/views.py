@@ -6,3 +6,7 @@ from django.shortcuts import render
 
 def index(request):
     return HttpResponse('Challenges Page')
+
+
+def jan(request):
+    return HttpResponse('January challenge is to add function view')
