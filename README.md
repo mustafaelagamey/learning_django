@@ -57,4 +57,15 @@
    
 
     
+##### Add Not found response
+1. In view function just return 
+    ```
+        def fn(request):
+            return HttpResponseNotFound(challenge)
+    ```
+
+
+   
+
+    
     

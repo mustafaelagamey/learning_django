@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 
 MONTHS_CHALLENGES = {
@@ -23,4 +23,6 @@ def index(request):
 
 def month_challenge(request,month):
     challenge = MONTHS_CHALLENGES.get(month)
+    if not challenge:
+        return HttpResponseNotFound("Unknown month")
     return HttpResponse(challenge)
