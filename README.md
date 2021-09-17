@@ -88,3 +88,9 @@
         path("<str:month>", views.month_challenge, name='month-ch') #app.urls
         reverse('month-ch-by-int',args=[month_number]) # resolve route name in views.py
     ```
+       
+##### Redirect Shortcut
+1. In urls pass redirect in lambda to path function
+    ```
+        path('', lambda r: redirect("route-name"))
+    ```
