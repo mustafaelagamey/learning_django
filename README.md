@@ -94,3 +94,17 @@
     ```
         path('', lambda r: redirect("route-name"))
     ```
+      
+##### Use Templates
+1. Use function to get contents 
+    ```
+    render_to_string('template_path_from_any_template_dir')
+    ```
+2. Register the templates directory
+    1. using templates dirs 
+    ```
+   'DIRS': [
+        BASE_DIR/"app"/"template_folder"
+    ],
+   ```
+   
