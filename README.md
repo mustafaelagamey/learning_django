@@ -125,3 +125,8 @@
     ```
         <p>{{var}}</p>
     ```
+##### Using templates filters
+1. In template use `|` to apply filter
+    ```
+        {{ var|filter_name }}
+    ```

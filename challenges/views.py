@@ -50,7 +50,7 @@ def month_challenge(request,month):
             return HttpResponseRedirect(reverse('month-ch-by-int',args=[month_number]))
         except ValueError:
             return render(request, 'challenges/unknown_month.html')
-    return render(request, 'challenges/month_challenge.html', {'text': challenge})
+    return render(request, 'challenges/month_challenge.html', {'text': challenge, 'access_method':'full month name'})
 
 
 def month_challenge_by_number(request,month):
