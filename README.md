@@ -102,9 +102,10 @@
     ```
 2. Register the templates directory
     1. using templates dirs 
-    ```
-   'DIRS': [
-        BASE_DIR/"app"/"template_folder"
-    ],
-   ```
+        ```
+       'DIRS': [
+            BASE_DIR/"app"/"template_folder"
+        ],
+       ```
+   2. using template detection by registering app to `INSTALLED_APPS` list
    
