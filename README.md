@@ -140,3 +140,9 @@
         repeated content
     {% endfor %}
     ```
+
+##### Using route names in templates
+1. In template use tag `{% url route-name params %}`
+    ```
+        <a href="{% url 'route-name' param %}">text</a>
+    ```
