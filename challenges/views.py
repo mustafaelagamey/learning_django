@@ -38,5 +38,5 @@ def month_challenge_by_number(request,month):
     if 0 < month < 13:
         challenge = MONTHS_CHALLENGES.get(month_numbers[month - 1])
     else:
-        return HttpResponseNotFound("Unknown month number")
-    return HttpResponse(challenge)
+        return render(request, 'challenges/unknown_month.html')
+    return render(request, 'challenges/month_challenge.html', {'text': challenge, 'access_method': 'month number'})
