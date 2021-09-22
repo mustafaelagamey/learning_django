@@ -11,7 +11,6 @@
         <li>
             <a href="{% url 'month-ch-by-int' forloop.counter %}">{{ forloop.counter }}</a>
             <a href="{% url 'month-ch' month%}">{{ month }}</a>
-            <a href="{% url 'month-ch' month|slice:3%}">{{ month|slice:3 }}</a>
         </li>
     {% endfor %}
 </ul>

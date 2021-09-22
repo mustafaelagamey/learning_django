@@ -20,8 +20,8 @@ MONTHS_CHALLENGES = {
 }
 month_numbers = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'August', 'september', 'october',
                  'november', 'december']
-months_shorts = [mon[:3] for mon in month_numbers]
 # Create your views here.
+
 
 def index(request):
     return render(request, 'challenges/index.html', {'month_numbers': month_numbers})
@@ -30,11 +30,7 @@ def index(request):
 def month_challenge(request,month):
     challenge = MONTHS_CHALLENGES.get(month)
     if not challenge:
-        try:
-            month_number = months_shorts.index(month) + 1
-            return HttpResponseRedirect(reverse('month-ch-by-int',args=[month_number]))
-        except ValueError:
-            return render(request, 'challenges/unknown_month.html')
+        return render(request, 'challenges/unknown_month.html')
     return render(request, 'challenges/month_challenge.html', {'text': challenge, 'access_method':'full month name'})
 
 
