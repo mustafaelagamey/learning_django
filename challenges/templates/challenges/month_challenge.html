@@ -5,7 +5,13 @@
     <title>Monthly challenges</title>
 </head>
 <body>
-<h3>{{ challenge }}</h3>
+<h3>
+    {% if challenge %}
+        {{ challenge }}
+    {% else %}
+        No Challenges for the selected month
+    {% endif %}
+</h3>
 <p><i>Accessed using <b>{{ access_method|title }}</b></i></p>
 </body>
 </html>

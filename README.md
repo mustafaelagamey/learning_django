@@ -146,3 +146,16 @@
     ```
         <a href="{% url 'route-name' param %}">text</a>
     ```
+
+##### Using if tag in templates
+1. Inside template use if tag `{% if  condition  %}` to start if 
+2. You can use elif tag `{% elif condition %}` 
+3. You can also use else tag `{% else %}` 
+4. Finally you should use end if tag to end if statement `{% endif %}` 
+    ```
+    {% if condition %}
+        {{ var }}
+    {% else %}
+        No Challenges for the selected month
+    {% endif %}   
+    ```

@@ -16,7 +16,7 @@ MONTHS_CHALLENGES = {
     'september':'Sep challenge',
     'october':'Oct challenge',
     'november':'Nov challenge',
-    'december':'Dec challenge',
+    'december':'',
 }
 month_numbers = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'August', 'september', 'october',
                  'november', 'december']
@@ -29,7 +29,7 @@ def index(request):
 
 def month_challenge(request,month):
     challenge = MONTHS_CHALLENGES.get(month)
-    if not challenge:
+    if challenge is None:
         return render(request, 'challenges/unknown_month.html')
     return render(request, 'challenges/month_challenge.html', {'challenge': challenge, 'access_method':'full month name'})
 
