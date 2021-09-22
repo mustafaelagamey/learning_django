@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Monthly challenges</title>
-</head>
-<body>
-<h3>
-    {% if challenge %}
-        {{ challenge }}
-    {% else %}
-        No Challenges for the selected month
-    {% endif %}
-</h3>
-<p><i>Accessed using <b>{{ access_method|title }}</b></i></p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block page_title %} Month challenge {% endblock %}
+{% block content %}
+    <h3>
+        {% if challenge %}
+            {{ challenge }}
+        {% else %}
+            No Challenges for the selected month
+        {% endif %}
+    </h3>
+    <p><i>Accessed using <b>{{ access_method|title }}</b></i></p>
+{% endblock %}
+

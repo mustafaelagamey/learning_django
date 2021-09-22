@@ -159,3 +159,11 @@
         No Challenges for the selected month
     {% endif %}   
     ```
+
+##### Template Inheritance
+1. Create base file
+2. Add blocks to base file using block tag `{% block block_name %}` default_val `{% endblock%}` 
+3. use extends tag `{% extends template_name %}` 
+4. update template block using block tag `{% block %}` content `{% endblock %}` 
+5. For productivity add template folder to project templates directories `TEMPLATES` 
+

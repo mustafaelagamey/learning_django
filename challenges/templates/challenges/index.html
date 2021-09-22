@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Months challenges</title>
-</head>
-<body>
-<h1>Monthly Challenges :</h1>
-<ul>
-    {% for month in month_numbers %}
-        <li>
-            <a href="{% url 'month-ch-by-int' forloop.counter %}">{{ forloop.counter }}</a>
-            <a href="{% url 'month-ch' month%}">{{ month }}</a>
-        </li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Monthly Challenges :</h1>
+    <ul>
+        {% for month in month_numbers %}
+            <li>
+                <a href="{% url 'month-ch-by-int' forloop.counter %}">{{ forloop.counter }}</a>
+                <a href="{% url 'month-ch' month %}">{{ month }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
