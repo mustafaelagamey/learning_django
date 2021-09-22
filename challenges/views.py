@@ -1,4 +1,5 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.urls import reverse
 
@@ -48,7 +49,7 @@ def month_challenge(request,month):
             month_number = months_shorts.index(month) + 1
             return HttpResponseRedirect(reverse('month-ch-by-int',args=[month_number]))
         except ValueError:
-            return HttpResponseNotFound(render_to_string('challenges/unknown_month.html'))
+            return render(request, 'challenges/unknown_month.html')
     return HttpResponse(challenge)
 
 
