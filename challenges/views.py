@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.urls import reverse
+from django.utils.safestring import mark_safe
 
 MONTHS_CHALLENGES = {
     'january':'Jan challenge',
@@ -37,9 +38,7 @@ def index(request):
     for i,month in enumerate(month_numbers):
         links.append(generate_month_links(i+1,month))
 
-    if links :
-        links_text = f"<ul>{''.join(links)}</ul>"
-        return HttpResponse("Monthly challenges :" + links_text)
+    return render(request, 'challenges/index.html', {'content': mark_safe(''.join(links))})
 
 
 def month_challenge(request,month):
