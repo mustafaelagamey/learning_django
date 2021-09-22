@@ -31,7 +31,7 @@ def month_challenge(request,month):
     challenge = MONTHS_CHALLENGES.get(month)
     if not challenge:
         return render(request, 'challenges/unknown_month.html')
-    return render(request, 'challenges/month_challenge.html', {'text': challenge, 'access_method':'full month name'})
+    return render(request, 'challenges/month_challenge.html', {'challenge': challenge, 'access_method':'full month name'})
 
 
 def month_challenge_by_number(request,month):
@@ -39,4 +39,4 @@ def month_challenge_by_number(request,month):
         challenge = MONTHS_CHALLENGES.get(month_numbers[month - 1])
     else:
         return render(request, 'challenges/unknown_month.html')
-    return render(request, 'challenges/month_challenge.html', {'text': challenge, 'access_method': 'month number'})
+    return render(request, 'challenges/month_challenge.html', {'challenge': challenge, 'access_method': 'month number'})
