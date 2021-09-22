@@ -6,6 +6,14 @@
 </head>
 <body>
 <h1>Monthly Challenges :</h1>
-<ul>{{ content }}</ul>
+<ul>
+    {% for month in month_numbers %}
+        <li>
+            <a href="">{{ forloop.counter }}</a>
+            <a href="">{{ month }}</a>
+            <a href="">{{ month|slice:3 }}</a>
+        </li>
+    {% endfor %}
+</ul>
 </body>
 </html>

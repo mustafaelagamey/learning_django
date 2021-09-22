@@ -130,3 +130,13 @@
     ```
         {{ var|filter_name }}
     ```
+
+##### Using for tage in templates
+1. Inside template use for tag `{% for  in  %}` 
+2. At the end of for use `{% endfore %}` tag
+
+    ```
+    {% for val in iterable %}
+        repeated content
+    {% endfor %}
+    ```

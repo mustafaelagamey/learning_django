@@ -23,22 +23,8 @@ month_numbers = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
 months_shorts = [mon[:3] for mon in month_numbers]
 # Create your views here.
 
-def generate_month_links(num , month):
-    return f"""
-<li>
-    <a href="{reverse('month-ch-by-int', args=[num])}">{num}</a> 
-    <a href="{reverse('month-ch', args=[month])}">{month}</a> 
-    <a href="{reverse('month-ch', args=[month[:3]])}">{month[:3]}</a>
-</li>
-    """
-
-
 def index(request):
-    links = []
-    for i,month in enumerate(month_numbers):
-        links.append(generate_month_links(i+1,month))
-
-    return render(request, 'challenges/index.html', {'content': mark_safe(''.join(links))})
+    return render(request, 'challenges/index.html', {'month_numbers': month_numbers})
 
 
 def month_challenge(request,month):
