@@ -5,6 +5,7 @@
 
 * ### [Terminal Commands](#teminal-commands)
 * ### [Code](#code)
+* ### [Templates](#templates)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -114,3 +115,13 @@
        ```
    2. using template detection by registering app to `INSTALLED_APPS` list
    
+### Templates<a id="templates"></a>
+##### Passing variables to template
+1. In view function pass variables as dict to render function
+    ```
+        render(request, 'template',{'var':'val'})
+    ```
+2. In the template use the keys of that dict as variable
+    ```
+        <p>{{var}}</p>
+    ```
