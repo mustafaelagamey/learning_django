@@ -167,3 +167,6 @@
 4. update template block using block tag `{% block %}` content `{% endblock %}` 
 5. For productivity add template folder to project templates directories `TEMPLATES` 
 
+##### Template Including
+1. Create partial file
+2. Include that partial file into template using include tag `{% include 'template-path' %}` 
