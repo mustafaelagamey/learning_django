@@ -170,3 +170,10 @@
 ##### Template Including
 1. Create partial file
 2. Include that partial file into template using include tag `{% include 'template-path' %}` 
+
+##### Template Including with variable
+1. Inside include tage use with variable="value"
+    ```
+    {% include 'template_path' with var_name=val %}
+    ```
+    * Note : No space between var_name and val , Space will raise error in template (needs keyword argument)

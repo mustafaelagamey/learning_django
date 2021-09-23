@@ -2,4 +2,7 @@
     <nav>
         <a href="{% url 'all-challenges' %}">All challenges</a>
     </nav>
+    {% if current_page %}
+        <span>Current Page: {{ current_page }} </span>
+    {% endif %}
 </header>
