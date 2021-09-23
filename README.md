@@ -177,3 +177,12 @@
     {% include 'template_path' with var_name=val %}
     ```
     * Note : No space between var_name and val , Space will raise error in template (needs keyword argument)
+
+##### Template 404
+1. Just add to template folder html page with name 404.html
+2. Raise Exception HTTP404 to move to the 404 template
+    ```
+   from django.http import  Http404
+    raise Http404
+    ```
+    * Note : this will work only in production mode during `debug = False`
