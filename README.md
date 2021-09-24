@@ -193,3 +193,10 @@
 3. In template use load tag with static `{% load static %}` to use static app in the template
 4. In template use static tag to load the requested tag `{% static 'front-end-path-from-static' %}`
 * You may need to restart development server
+
+##### Loading general static file
+1. In settings.py add main dir to list `STATICFILES_DIRS` 
+2. In settings.py check that static app `django.contrib.staticfiles` is registered to `INSTALLED_APPS` 
+3. In template use load tag with static `{% load static %}` to use static app in the template
+4. In template use static tag to load the requested tag `{% static 'front-end-path-from-static' %}`
+* You may need to restart development server
