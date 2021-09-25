@@ -26,6 +26,9 @@
 ##### Start New App
 `python manage.py startapp appname`
 
+##### Start django interactive shell
+`python manage.py shell`
+
 
 
 ### Code<a id="code"></a>
