@@ -211,3 +211,8 @@
         title = models.CharField(max_length=80)
    ```
 
+##### Create Migrations
+1. Create the model that describe the database
+2. In terminal type the migrations maker command `python manage.py makemigrations `
+3. That will create migration file in migrations dir , this file should represent the changes of the database
+4. Migrating the database using the command `python manage.py migrate`
