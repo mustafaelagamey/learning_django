@@ -226,3 +226,9 @@
         inst = ModelName(col1 = val , col2 = val)
    ```
 2. Save that instance `inst.save()`
+
+##### Fetch Db records from code
+1. Use the model manager to fetch all
+    ```
+        data = ModelName.objects.all()
+   ```
