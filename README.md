@@ -238,3 +238,15 @@
     ```
     def __str__(self):
         return f"{self.title} ({self.rating})"   ```
+
+##### Create model validations
+*   This validations will work only in UI
+1. In the Model Field bass keyward argument `validators` contains list of required validators 
+    ```
+   from django.core.validators import MinValueValidator , MaxValueValidator
+   
+    class Book(models.Model):
+        rating = models.IntegerField(
+            validators=[ MinValueValidator(1), MaxValueValidator(5) ]) 
+   ```
+2. Make and run migrations 
