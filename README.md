@@ -232,3 +232,9 @@
     ```
         data = ModelName.objects.all()
    ```
+
+##### Change model representation
+1. change `__str__` function in the model to represent meaningful string 
+    ```
+    def __str__(self):
+        return f"{self.title} ({self.rating})"   ```
