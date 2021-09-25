@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # apps
     'challenges',
+    'books',
     # default apps
     'django.contrib.admin',
     'django.contrib.auth',

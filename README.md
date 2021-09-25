@@ -6,6 +6,7 @@
 * ### [Terminal Commands](#teminal-commands)
 * ### [Code](#code)
 * ### [Templates](#templates)
+* ### [Database](#database)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -200,3 +201,13 @@
 3. In template use load tag with static `{% load static %}` to use static app in the template
 4. In template use static tag to load the requested tag `{% static 'front-end-path-from-static' %}`
 * You may need to restart development server
+
+### Database<a id="database"></a>
+##### Create Model
+1. In app models.py file add model class that inherit from `models.Model` to be table
+2. In that class initialize its properties to be the column , each one should be models.FieldType()
+    ```
+    class Book(models.Model):
+        title = models.CharField(max_length=80)
+   ```
+
