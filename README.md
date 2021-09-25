@@ -219,3 +219,10 @@
 2. In terminal type the migrations maker command `python manage.py makemigrations `
 3. That will create migration file in migrations dir , this file should represent the changes of the database
 4. Migrating the database using the command `python manage.py migrate`
+
+##### Create Db record from code
+1. Create instance from model and pass columns value to its constructor 
+    ```
+        inst = ModelName(col1 = val , col2 = val)
+   ```
+2. Save that instance `inst.save()`
