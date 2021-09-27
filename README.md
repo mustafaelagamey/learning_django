@@ -271,3 +271,11 @@
         inst = ModelName.objects.all()[0]
    ```
 2. Save that instance `inst.delete()`
+
+##### Fetch one record from DB
+1. Get the object directly using get and passing conditions into it
+    ```
+        inst = ModelName.objects.get(col = val)
+   ```
+*   Note : This will raise error in two cases : no records found or more than one record fetched
+*   Note : Id and primary key are preferred to be used in this function 
