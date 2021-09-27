@@ -221,12 +221,18 @@
 4. Migrating the database using the command `python manage.py migrate`
 
 ##### Create Db record from code
-1. Create instance from model and pass columns value to its constructor 
-    ```
-        inst = ModelName(col1 = val , col2 = val)
-   ```
-2. Save that instance `inst.save()`
-
+1. Save Method
+    1. Create instance from model and pass columns value to its constructor 
+        ```
+            inst = ModelName(col1 = val , col2 = val)
+       ```
+    2. Save that instance `inst.save()`
+2. Create Method
+    1. Use model.create function directly
+    columns value to its constructor 
+        ```
+            inst = ModelName.create(col1 = val , col2 = val)
+       ```
 ##### Fetch Db records from code
 1. Use the model manager to fetch all
     ```
