@@ -258,3 +258,10 @@
    ```
 2. Edit that instance `inst.column = val`
 3. Save that instance `inst.save()`
+
+##### Delete Db record from code
+1. Get the instance to delete by any way 
+    ```
+        inst = ModelName.objects.all()[0]
+   ```
+2. Save that instance `inst.delete()`
