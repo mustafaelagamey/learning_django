@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'includes/books_header.html' %}
+    {% if book %}
+        <h4>{{ book.title }} <span></span></h4>
+        <p>Rating is {{ book.rating }}</p>
+    {% else %}
+        <h6>Sorry , This book doesn't exist</h6>
+    {% endif %}
+{% endblock %}
