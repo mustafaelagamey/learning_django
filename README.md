@@ -289,3 +289,14 @@
     ```
         inst_list = ModelName.objects.filter(col1__lt = val1 , col2__contains = val2)
    ```
+3. Implementing DB or conditions
+    ```
+    from django.db.models import Q
+    inst_list = ModelName.objects.filter(Q(col1__lt = val1) | Q(col2__contains = val2) )
+   ```
+4. Implementing DB or with and conditions
+    ```
+    from django.db.models import Q
+    inst_list = ModelName.objects.filter(Q(col1__lt = val1) | Q(col2__contains = val2) , co3 = val3)
+   ```
+   * Note : keyword arguments should be in the end or raise Syntax error
