@@ -279,3 +279,13 @@
    ```
 *   Note : This will raise error in two cases : no records found or more than one record fetched
 *   Note : Id and primary key are preferred to be used in this function 
+
+##### Fetch some records from DB
+1. Get the list objects directly using filter and passing conditions into it
+    ```
+        inst_list = ModelName.objects.filter(col1 = val1 , col2 = val2)
+   ```
+2. Passing db conditions by entering col__operator
+    ```
+        inst_list = ModelName.objects.filter(col1__lt = val1 , col2__contains = val2)
+   ```
