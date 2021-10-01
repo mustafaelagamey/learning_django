@@ -7,6 +7,7 @@
 * ### [Code](#code)
 * ### [Templates](#templates)
 * ### [Database](#database)
+* ### [Model](#model)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -310,3 +311,15 @@
     q = Model.objects.filter()
     q2 = q.filter()
    ```
+
+### Model<a id="model"></a>
+##### Return model record directly
+1. In the model class add `get_absolute_url` method to generate url for the record
+    ```
+    def get_absolute_url(self):
+        return reverse("url_name", args=[self.id])
+   ```
+2. In template use this function as property
+    ``` 
+    <a href="{{book.get_absolute_url}}"> 
+   ``` 
