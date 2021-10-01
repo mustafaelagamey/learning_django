@@ -20,5 +20,6 @@ from django.urls import path, include, reverse
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('challenges/', include("challenges.urls")),
+    path('books/', include("books.urls" , namespace='books')),
     path('', lambda r: redirect("all-challenges")),
 ]
