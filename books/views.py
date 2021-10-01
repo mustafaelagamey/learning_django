@@ -12,9 +12,9 @@ def listing(request):
     return render(request, 'books/listing.html',context=context)
 
 
-def detail(request, id):
+def detail(request, slug):
     try:
-        book = Book.objects.get(id=id)
+        book = Book.objects.get(slug=slug)
     except Book.DoesNotExist:
         book = None
     context = {

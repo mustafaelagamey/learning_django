@@ -334,3 +334,9 @@
         self.slug = slugify(self.main_field_name)
         return super().save(args, kwargs)
    ``` 
+   
+##### Using slug field
+1. Update `get_absolute_url` method to generate url correctly
+2. Update url parameters for better code
+3. Update detail view to use slug
+ 
