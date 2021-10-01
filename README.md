@@ -312,6 +312,12 @@
     q2 = q.filter()
    ```
 
+##### Enhance Db search performance using index
+1. In the wanted field pass flag `db_index = True`
+2. Make and run migrations
+* Note : For some reason migrations didn't run for that change only , So It will be better to add index during creating field
+
+
 ### Model<a id="model"></a>
 ##### Return model record directly
 1. In the model class add `get_absolute_url` method to generate url for the record
@@ -334,9 +340,8 @@
         self.slug = slugify(self.main_field_name)
         return super().save(args, kwargs)
    ``` 
-   
+
 ##### Using slug field
 1. Update `get_absolute_url` method to generate url correctly
 2. Update url parameters for better code
 3. Update detail view to use slug
- 
