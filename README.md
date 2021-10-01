@@ -300,3 +300,13 @@
     inst_list = ModelName.objects.filter(Q(col1__lt = val1) | Q(col2__contains = val2) , co3 = val3)
    ```
    * Note : keyword arguments should be in the end or raise Syntax error
+
+* Note : filters can be chained :
+ 
+    `Model.objects.filter().filter().filter()` 
+
+    or 
+    ```
+    q = Model.objects.filter()
+    q2 = q.filter()
+   ```
