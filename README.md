@@ -323,3 +323,14 @@
     ``` 
     <a href="{{book.get_absolute_url}}"> 
    ``` 
+   
+##### Adding slug field to model
+1. In the model class add  field `slug = models.SlugField(default="", null=False)` method to generate slug field
+
+2. Create and run migrations to apply effects to DB
+3. Override save method to update slug filed using django slugify util
+    ``` 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.main_field_name)
+        return super().save(args, kwargs)
+   ``` 
