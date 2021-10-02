@@ -317,6 +317,13 @@
 2. Make and run migrations
 * Note : For some reason migrations didn't run for that change only , So It will be better to add index during creating field
 
+##### Using aggregate function count
+1. In the model just call the count from the objects manager 
+
+    ```
+    count = Model.objects.count()
+   ```
+
 
 ### Model<a id="model"></a>
 ##### Return model record directly

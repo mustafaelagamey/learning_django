@@ -6,8 +6,10 @@ from django.shortcuts import render
 
 def listing(request):
     books = Book.objects.all()
+    count = Book.objects.count()
     context = {
-        'books' :books
+        'books': books,
+        'count': count,
     }
     return render(request, 'books/listing.html',context=context)
 
