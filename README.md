@@ -363,6 +363,13 @@
         self.slug = slugify(self.main_field_name)
         return super().save(args, kwargs)
    ``` 
+##### Make field None Editable 
+1. pass false editable to field
+
+    ```
+    field = models.Field(editable=False)
+   ```
+  
 
 ##### Using slug field
 1. Update `get_absolute_url` method to generate url correctly

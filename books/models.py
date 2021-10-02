@@ -11,7 +11,7 @@ class Book(models.Model):
         validators=[
             MinValueValidator(1), MaxValueValidator(5)
         ])
-    slug = models.SlugField(default="", null=False, db_index=True)
+    slug = models.SlugField(default="",  editable=False, null=False, db_index=True)
 
     def __str__(self):
         return f"{self.title} ({self.rating})"
