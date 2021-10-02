@@ -390,3 +390,7 @@
     admin.site.register(ModelName)
    ```
  
+##### Customize model in admin area 
+1. Add new class that inherits from ModelAdmin
+2. Passing that class to admin site register fn 
+
