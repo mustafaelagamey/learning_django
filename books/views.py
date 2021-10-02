@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 
 def listing(request):
-    books = Book.objects.all()
+    books = Book.objects.all().order_by("-rating", "title")
     count = Book.objects.count()
     avg_rating = books.aggregate(Avg("rating"))
     context = {

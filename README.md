@@ -332,6 +332,13 @@
     avg_col = model.aggregate(Avg("col"))
    ```
 
+##### Using DB order by 
+1. chain function order_by with columns as keys having - before colum name for desc
+
+    ```
+    model.objects.all().order_by("col1" , "-col2")
+   ```
+ 
 
 ### Model<a id="model"></a>
 ##### Return model record directly
