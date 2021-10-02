@@ -375,3 +375,11 @@
 
 ##### Creating super user 
 1. in command line  run `python manage.py createsuperuser`
+
+##### Show app in admin area 
+1. In app admin.py file register the model to admin site
+
+    ```
+    admin.site.register(ModelName)
+   ```
+ 
