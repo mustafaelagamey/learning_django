@@ -341,10 +341,15 @@
    ```
  
 ##### Create relation between models 
-1. In the many class add field with type `ForeignKey` that takes related model and on_delete action ( models.SET_NULL or models.CASCADE)
+1. One-To-Many : In the many class add field with type `ForeignKey` that takes related model and on_delete action ( models.SET_NULL or models.CASCADE)
 
     ```
     fkey_col = models.ForeignKey(RelatedModel, on_delete=models.SET_NULL)
+   ```
+2. One-To-One : In any of models add field with type `OneToOne` that takes the model and on_delete action 
+
+   ```
+    fname = models.OneToOneField(RelatedModel, on_delete=models.CASCADE)
    ```
 
 
