@@ -1,4 +1,4 @@
-from .models import Book
+from .models import Book, Author
 from django.contrib import admin
 
 
@@ -12,3 +12,4 @@ class BookAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Book, BookAdmin)
+admin.site.register(Author)
