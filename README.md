@@ -372,3 +372,6 @@
 ### Admin Area<a id="admin-area"></a>
 ##### Access Admin area 
 1. Access Admin area using '/admin' 
+
+##### Creating super user 
+1. in command line  run `python manage.py createsuperuser`
