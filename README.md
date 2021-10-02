@@ -394,3 +394,10 @@
 1. Add new class that inherits from ModelAdmin
 2. Passing that class to admin site register fn 
 
+##### make field readonly 
+1. In customized model admin pass field names to readonly_fields list or tuple
+
+    ```
+    readonly_fields = ("field_name",)
+   ```
+ 
