@@ -1,4 +1,5 @@
 from books.models import Book
+from django.db.models import Avg
 from django.shortcuts import render
 
 # Create your views here.
@@ -7,9 +8,11 @@ from django.shortcuts import render
 def listing(request):
     books = Book.objects.all()
     count = Book.objects.count()
+    avg_rating = books.aggregate(Avg("rating"))
     context = {
         'books': books,
         'count': count,
+        'avg_rating':avg_rating['rating__avg']
     }
     return render(request, 'books/listing.html',context=context)
 

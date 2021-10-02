@@ -324,6 +324,14 @@
     count = Model.objects.count()
    ```
 
+##### Using DB aggregate function like average 
+1.  Pass model aggregate Object to model aggregate function 
+
+    ```
+    from django.db.models import Avg
+    avg_col = model.aggregate(Avg("col"))
+   ```
+
 
 ### Model<a id="model"></a>
 ##### Return model record directly
