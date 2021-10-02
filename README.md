@@ -383,6 +383,20 @@
 2. Update url parameters for better code
 3. Update detail view to use slug
 
+##### Filtering by related model 
+1.  pass to filter method the relation column followed by __col=val
+
+    ```
+    ManyModel.objects.filter(relation_col__related_model_col=val)
+    ```
+
+    * Note : you can follow that and use inner conditions 
+
+    ```
+    ManyModel.objects.filter(relation_col__related_model_col__contains=val)
+    ```
+
+
 ### Admin Area<a id="admin-area"></a>
 ##### Access Admin area 
 1. Access Admin area using '/admin' 
