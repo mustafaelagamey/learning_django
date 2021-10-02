@@ -401,3 +401,22 @@
     readonly_fields = ("field_name",)
    ```
  
+##### make field prepopulated 
+1. in the customized model admin pass the field to prepopulated dict 
+
+    ```
+    prepopulated_fields = {'filedname' : ("dependancy_tuple",) }
+   ```
+ 
+##### make list filter  
+1. In customized model add field to filter list 
+    ```
+    list_filter = ("fieldname",)
+   ```
+ 
+##### Add field to list column 
+1. In customized model add fields to display to list_display 
+    ```
+    list_display = ("field1","field2")
+   ```
+ 
