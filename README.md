@@ -8,6 +8,7 @@
 * ### [Templates](#templates)
 * ### [Database](#database)
 * ### [Model](#model)
+* ### [Admin Area](#admin-area)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -367,3 +368,7 @@
 1. Update `get_absolute_url` method to generate url correctly
 2. Update url parameters for better code
 3. Update detail view to use slug
+
+### Admin Area<a id="admin-area"></a>
+##### Access Admin area 
+1. Access Admin area using '/admin' 
