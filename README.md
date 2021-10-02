@@ -395,6 +395,12 @@
     ```
     ManyModel.objects.filter(relation_col__related_model_col__contains=val)
     ```
+2. using manymodel set directly from related model
+
+   ```
+    related_model_instance.manymodel_set.all()
+   ```
+   * Note : you can change the the manymodel set in the foreign key Field by passing to it keyword arg `related_name="manymodel_set_alt"`
 
 
 ### Admin Area<a id="admin-area"></a>
