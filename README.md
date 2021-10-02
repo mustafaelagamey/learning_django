@@ -340,6 +340,13 @@
     model.objects.all().order_by("col1" , "-col2")
    ```
  
+##### Create relation between models 
+1. In the many class add field with type `ForeignKey` that takes related model and on_delete action ( models.SET_NULL or models.CASCADE)
+
+    ```
+    fkey_col = models.ForeignKey(RelatedModel, on_delete=models.SET_NULL)
+   ```
+
 
 ### Model<a id="model"></a>
 ##### Return model record directly
