@@ -51,7 +51,7 @@ class Book(models.Model):
             MinValueValidator(1), MaxValueValidator(5)
         ])
     slug = models.SlugField(default="", null=False, db_index=True)
-    country = models.ManyToManyField(Country)
+    published_countries = models.ManyToManyField(Country)
 
     def __str__(self):
         return f"{self.title} ({self.rating})"
