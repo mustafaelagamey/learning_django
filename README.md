@@ -407,6 +407,15 @@
    ```
    * Note : you can change the the manymodel set in the foreign key Field by passing to it keyword arg `related_name="manymodel_set_alt"`
 
+##### Using Meta to set plural 
+1.  In model add class `Meta` and inside class set plural name for that class
+
+   ```
+    class ModelName(
+    class Meta:
+        verbose_name_plural = "new plural name"
+   ```
+
 
 ### Admin Area<a id="admin-area"></a>
 ##### Access Admin area 
