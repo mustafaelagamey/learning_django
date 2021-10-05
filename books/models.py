@@ -5,6 +5,17 @@ from django.urls import reverse
 from django.utils.text import slugify
 
 
+class Country(models.Model):
+    name = models.CharField(max_length=80)
+    code = models.CharField(max_length=2)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Countries"
+
+
 class Address(models.Model):
     street = models.CharField(max_length=80)
     city = models.CharField(max_length=50)
@@ -40,6 +51,7 @@ class Book(models.Model):
             MinValueValidator(1), MaxValueValidator(5)
         ])
     slug = models.SlugField(default="", null=False, db_index=True)
+    country = models.ManyToManyField(Country)
 
     def __str__(self):
         return f"{self.title} ({self.rating})"

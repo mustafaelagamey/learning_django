@@ -351,6 +351,12 @@
    ```
     fname = models.OneToOneField(RelatedModel, on_delete=models.CASCADE)
    ```
+   
+3. Many-To-Many : In any of models add field with type `ManyToMany` that takes the related model as argument
+ 
+   ``` 
+    fname = models.ManyToManyField(RelatedModel)
+   ``` 
 
 
 ### Model<a id="model"></a>
