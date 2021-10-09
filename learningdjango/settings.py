@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     # apps
     'challenges',
     'books',
+    'reviews',
     # default apps
     'django.contrib.admin',
     'django.contrib.auth',
