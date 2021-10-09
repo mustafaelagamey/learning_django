@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('challenges/', include("challenges.urls")),
     path('books/', include("books.urls" , namespace='books')),
+    path('reviews/', include("reviews.urls" , namespace='reviews')),
     path('', lambda r: redirect("all-challenges")),
 ]
