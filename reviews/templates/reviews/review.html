@@ -3,7 +3,8 @@
     Review
 {% endblock %}
 {% block content %}
-    <form action="">
+    <form method="post">
+    {% csrf_token %}
         <label for="username">Your name </label>
         <input type="text" id="username" name="username">
         <button>Send</button>
