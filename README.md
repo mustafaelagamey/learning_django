@@ -9,6 +9,7 @@
 * ### [Database](#database)
 * ### [Model](#model)
 * ### [Admin Area](#admin-area)
+* ### [Forms](#forms)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -466,4 +467,18 @@
     ```
     list_display = ("field1","field2")
    ```
+ 
+### Forms<a id="forms"></a>
+##### Using django forms to auto create form
+1. Add Form class usually in forms.py
+
+   ```
+    from django import forms
+    class NewForm(forms.Form):
+        field = forms.CharField()
+   ```
+2. In view create an instance from this form and pass it to template
+3. In template use `{{form_name}}` to automatic implement the form inputs inside form element
+4. In case of post form you should create csrf_token using `{% csrf_token %}` in the template
+
  

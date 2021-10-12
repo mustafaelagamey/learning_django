@@ -4,10 +4,8 @@
 {% endblock %}
 {% block content %}
     <form method="post">
-    {% csrf_token %}
-        <label for="username">Your name </label>
-        <input type="text" id="username" name="username">
+        {% csrf_token %}
+        {{ form }}
         <button>Send</button>
-
     </form>
 {% endblock %}

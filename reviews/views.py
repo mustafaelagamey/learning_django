@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from .forms import ReviewForm
 
 
 # Create your views here.
 def review(request):
-    return render(request,'reviews/review.html')
+    form = ReviewForm()
+    return render(request, 'reviews/review.html', {"form": form})
