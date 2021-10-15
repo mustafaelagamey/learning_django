@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    Review
+{% endblock %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+
+        {% for inp in feedback_form %}
+            <div>
+                {{ inp.label_tag }}
+                <br>
+                {{ inp }}
+                <br>
+                {{ inp.errors }}
+                <br>
+            </div>
+
+        {% endfor %}
+
+
+        <button>Send</button>
+    </form>
+{% endblock %}

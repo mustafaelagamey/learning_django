@@ -481,6 +481,25 @@
 3. In template use `{{form_name}}` to automatic implement the form inputs inside form element
 4. In case of post form you should create csrf_token using `{% csrf_token %}` in the template
 
+##### Using django ModelForm to generate form 
+1. Add Form class usually in forms.py having Meta class that represent the related Model
+
+   ```
+    from django import forms
+    class CreatedModelForm(forms.ModelForm):
+        class Meta :
+            model = CreatedModel
+   ```
+2. Using Meta select fields or select all fields and exclude some fields
+
+   ```
+    class Meta:
+        model = CreatedModel
+        fields = '__all__'  # Selecting all fields
+        fields = ['col1', 'col2']  # select some fields
+        exclude = ['col3']  # exclude some fields
+   ```
+
 ##### Validating form 
 1. In the request check for post method 
 
