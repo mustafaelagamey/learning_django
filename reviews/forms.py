@@ -17,3 +17,11 @@ class FeedbackForm(forms.ModelForm):
         fields = '__all__'  # Selecting all fields
         # fields = ['user_name', 'comment']  # select some fields
         # exclude = ['excluded_field']  # exclude some fields
+        labels = {
+            'user_name': 'Enter Your Name'
+        }
+        error_messages = {
+            'user_name': {
+                'required': 'Your name must not be empty '
+            }
+        }

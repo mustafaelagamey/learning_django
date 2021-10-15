@@ -499,6 +499,11 @@
         fields = ['col1', 'col2']  # select some fields
         exclude = ['col3']  # exclude some fields
    ```
+3. Additional Use of Meta Class 
+   ```
+   labels = {'col':'Form Label'}
+   error_messages = {'username':{'error_name':'error_message'}}
+   ```
 
 ##### Validating form 
 1. In the request check for post method 
