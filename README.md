@@ -512,3 +512,12 @@
         'max_length': 'Please enter a shorter value'
     })
    ```
+##### Editing Form html 
+1. You can edit form html in template by generating for data manually :
+
+   ```
+        {{ inp.label_tag }}
+        {{ inp }}
+        {{ inp.errors }}
+
+   ```

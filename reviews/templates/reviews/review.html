@@ -5,7 +5,20 @@
 {% block content %}
     <form method="post">
         {% csrf_token %}
-        {{ form }}
+
+        {% for inp in form %}
+            <div>
+                {{ inp.label_tag }}
+                <br>
+                {{ inp }}
+                <br>
+                {{ inp.errors }}
+                <br>
+            </div>
+
+        {% endfor %}
+
+
         <button>Send</button>
     </form>
 {% endblock %}
