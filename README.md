@@ -500,4 +500,15 @@
     - Note : you can use `.cleaned_data` attr to use clean data of the user inputs
 
 3. To display form errors , just pass to template the form instance created from posted data
- 
+
+##### Editing form fields characteristics  
+1. You can edit it by passing kwargs to field in form Class 
+   ```
+    fieldname = forms.CharField(label='Another label')
+   ```
+2. You can edit form errors messages by passing kwarg error_messages to the field class
+   ```
+    fieldname = forms.CharField(error_messages={
+        'max_length': 'Please enter a shorter value'
+    })
+   ```
