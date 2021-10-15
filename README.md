@@ -481,4 +481,23 @@
 3. In template use `{{form_name}}` to automatic implement the form inputs inside form element
 4. In case of post form you should create csrf_token using `{% csrf_token %}` in the template
 
+##### Validating form 
+1. In the request check for post method 
+
+    ```
+    if request.method == 'POST' :
+    ```
+ 
+2. In that condition, create Form object using posted data and check for valid form using `is_valid()` method , do something , and render any view 
+
+    ```
+        form = ModelForm(request.POST)
+        if form.is_valid():
+            # send email
+            return render(request, 'reviews/thank-you.html', {'form': form.cleaned_data})
+    ```
+
+    - Note : you can use `.cleaned_data` attr to use clean data of the user inputs
+
+3. To display form errors , just pass to template the form instance created from posted data
  

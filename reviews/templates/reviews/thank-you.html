@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    Thank you
+{% endblock %}
+{% block content %}
+    <br>
+    <div class="alert alert-success">Review Completed successfully</div>
+    <div>
+    <h4>Thanks {{ form.user_name }}</h4>
+    <p>We will send email to {{ form.email }}</p>
+        <a href="{% url 'reviews:add-review' %}">Add review</a>
+    </div>
+{% endblock %}
