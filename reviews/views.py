@@ -43,3 +43,8 @@ def feedback(request):
 
 class ThankYouView(TemplateView):
     template_name = 'reviews/thank-you.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["user_name"] = "Dear Customer"
+        return context

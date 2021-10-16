@@ -570,3 +570,11 @@
         template_name = 'reviews/thank-you.html'
    ```
 2. Use method as_view from this class in url path because this is class based view
+3. override function `get_context_data` to edit context 
+   ```
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["user_name"] = "Dear Customer"
+        return context
+   ```
+ 
