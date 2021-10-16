@@ -10,6 +10,7 @@
 * ### [Model](#model)
 * ### [Admin Area](#admin-area)
 * ### [Forms](#forms)
+* ### [Class Based Views](#class-based-views)
 
 <!-- /MarkdownTOC -->
 </details>
@@ -35,21 +36,6 @@
 
 
 ### Code<a id="code"></a>
-##### Add function view
-1. Views.py , Add function that receive request object and return HttpResponse object
-    ```
-    def index(request):
-        return HttpResponse('Challenges Page')
-    ```
-
-2. Add URL 
-    ```
-   urlpatterns = [path("", views.index)] #app.urls
-   
-   path('app/', include("app.urls")) #project.urls
-   ```
-   
-
 ##### Add dynamic link
 1. Views.py , Add function that receive request object and url parameter and return HttpResponse object
     ```
@@ -545,3 +531,19 @@
         {{ inp.errors }}
 
    ```
+
+### Views <a id="class-based-views"></a>
+##### Add function view
+1. Views.py , Add function that receive request object and return HttpResponse object
+    ```
+    def index(request):
+        return HttpResponse('Challenges Page')
+    ```
+
+2. Add URL 
+    ```
+   urlpatterns = [path("", views.index)] #app.urls
+   
+   path('app/', include("app.urls")) #project.urls
+   ```
+   
