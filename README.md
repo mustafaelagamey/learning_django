@@ -562,3 +562,11 @@
    ```
     path('',ClassBasedView.as_view())
    ```
+##### Using Template Based View 
+1. In views.py , Add class that inherit from django.views.generic.TemplateView , And add attr `template_name` that refers to template file
+
+   ```
+    class UsedView(TemplateView):
+        template_name = 'reviews/thank-you.html'
+   ```
+2. Use method as_view from this class in url path because this is class based view
