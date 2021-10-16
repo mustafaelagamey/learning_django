@@ -1,5 +1,20 @@
 from django.shortcuts import render
 from .forms import ReviewForm, FeedbackForm
+from django.views import View
+
+
+class ReviewView(View):
+    def get(self, request):
+        form = ReviewForm()
+        return render(request, 'reviews/review.html', {"form": form})
+
+    def post(self, request):
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            # send email
+            return render(request, 'reviews/thank-you.html', {'form': form.cleaned_data})
+
+        return render(request, 'reviews/review.html', {"form": form})
 
 
 # Create your views here.
@@ -20,6 +35,6 @@ def feedback(request):
         if feedback_form.is_valid():
             feedback_form.save()
             feedback_form = FeedbackForm()
-    else :
+    else:
         feedback_form = FeedbackForm()
     return render(request, 'reviews/feedback.html', {"feedback_form": feedback_form})

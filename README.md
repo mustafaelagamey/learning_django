@@ -547,3 +547,18 @@
    path('app/', include("app.urls")) #project.urls
    ```
    
+##### Add Class Based View 
+1. In views.py , Add Class inherit from django.views.View and contains methods get for get functionality , post for post functionality 
+   ```
+    class ClassBasedView(View):
+        def get(self, request):
+            return render(request, 'template')
+    
+        def post(self, request):   
+            return render(request, 'template')
+   ```
+  
+2. In urls call from this class method `as_view()` in the path 
+   ```
+    path('',ClassBasedView.as_view())
+   ```
