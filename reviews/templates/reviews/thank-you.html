@@ -6,8 +6,10 @@
     <br>
     <div class="alert alert-success">Review Completed successfully</div>
     <div>
-    <h4>Thanks {{ user_name }}</h4>
-    <p>We will send email to you</p>
-        <a href="{% url 'reviews:add-review' %}">Add review</a>
+        <h4>Thanks {{ user_name }}</h4>
+        <p>We will send email to you</p>
+        <a class="btn btn-primary" href="{% url 'reviews:add-review' %}">Add review</a>
+        <a class="btn btn-secondary" href="{% url 'reviews:add-feedback' %}">Add feedback</a>
+        <a class="btn btn-success" href="{% url 'reviews:list-feedbacks' %}">Show feedbacks</a>
     </div>
 {% endblock %}

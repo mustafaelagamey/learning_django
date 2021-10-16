@@ -577,4 +577,14 @@
         context["user_name"] = "Dear Customer"
         return context
    ```
+ ##### Using List view 
+ 1. In views.py , Add class that inherit from django.views.generic.ListView , And add attrs `model` and `template_name`  to link to View to related model and related template 
+    ```
+     class FeedbackListView(ListView):
+        model = Feedback
+        template_name = 'reviews/feedback_list.html'
+    ```
  
+ 2. Use method `as_view` to add view url because this is type of template view
+ 3. You can change that view by using attrs like `context_object_name` for adding additional name for the `object_list` , and methods like `get_queryset()` to edit model list query
+
