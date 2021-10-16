@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ReviewForm, FeedbackForm
 from django.views import View
 
@@ -12,7 +12,7 @@ class ReviewView(View):
         form = ReviewForm(request.POST)
         if form.is_valid():
             # send email
-            return render(request, 'reviews/thank-you.html', {'form': form.cleaned_data})
+            return redirect('reviews:thank-you')
 
         return render(request, 'reviews/review.html', {"form": form})
 
@@ -23,7 +23,7 @@ def review(request):
         form = ReviewForm(request.POST)
         if form.is_valid():
             # send email
-            return render(request, 'reviews/thank-you.html', {'form': form.cleaned_data})
+            return redirect('reviews:thank-you')
     else:
         form = ReviewForm()
     return render(request, 'reviews/review.html', {"form": form})
@@ -38,3 +38,9 @@ def feedback(request):
     else:
         feedback_form = FeedbackForm()
     return render(request, 'reviews/feedback.html', {"feedback_form": feedback_form})
+
+
+class ThankYouView(View):
+
+    def get(self, request):
+        return render(request, 'reviews/thank-you.html')
