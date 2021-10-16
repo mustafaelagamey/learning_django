@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    Feedback Detail
+{% endblock %}
+{% block content %}
+    <div>
+        <h4>Feedback from {{ feedback.email }}</h4>
+        <h5>Name : {{ feedback.user_name }}</h5>
+        <p>{{ feedback.comment }}</p>
+    </div>
+
+    <hr>
+    <div>
+        <a class="btn btn-success" href="{% url 'reviews:list-feedbacks' %}">Show All feedbacks</a>
+    </div>
+
+{% endblock %}

@@ -8,12 +8,14 @@
         <div class="col-6 fw-bolder">Comment</div>
         <div class="col-6 fw-bolder"> Username</div>
         {% for feedback in feedbacks %}
-            <div class="col-6">{{ feedback.comment }} </div>
+            <div class="col-6">
+                <a href="{{ feedback.get_absolute_url }}">{{ feedback.comment }}</a>
+            </div>
             <div class="col-6"> {{ feedback.user_name }}</div>
         {% endfor %}
     </div>
     <hr>
-    <div >
+    <div>
         <a class="btn btn-secondary" href="{% url 'reviews:add-feedback' %}">Add feedback</a>
     </div>
 

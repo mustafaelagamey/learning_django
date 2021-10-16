@@ -588,3 +588,7 @@
  2. Use method `as_view` to add view url because this is type of template view
  3. You can change that view by using attrs like `context_object_name` for adding additional name for the `object_list` , and methods like `get_queryset()` to edit model list query
 
+##### Using Detail View 
+1. In views.py , Add class that inherit from `django.views.generic.DetailView` , And add attrs `model` and `template_name` to link View to related model and related template because this is template view
+2. Use method `as_view` to add view url because this is type of template view , and add parameter pk in uri ( detail view expect this parameter to get object by it) 
+3. In template you can use model name in small case or `object` that represent to current selected record

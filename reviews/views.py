@@ -2,7 +2,7 @@ from django.db.models.functions import Length
 from django.shortcuts import render, redirect
 from .forms import ReviewForm, FeedbackForm
 from django.views import View
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Feedback
 
 
@@ -61,3 +61,8 @@ class FeedbackListView(ListView):
         query_set = super(FeedbackListView, self).get_queryset()
         # returns only usernames more than 2
         return query_set.annotate(user_name_len=Length('user_name')).filter(user_name_len__gt=2)
+
+
+class FeedbackDetailView(DetailView):
+    model = Feedback
+    template_name = 'reviews/feedback_detail.html'
