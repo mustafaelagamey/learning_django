@@ -5,8 +5,7 @@
 {% block content %}
     <form method="post">
         {% csrf_token %}
-
-        {% for inp in feedback_form %}
+        {% for inp in form %}
             <div>
                 {{ inp.label_tag }}
                 <br>

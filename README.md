@@ -598,3 +598,7 @@
 
 2. You can use the `form` provided in the template context to access the form 
  
+ ##### Using Create View 
+ 1. In views.py , Add class that inherit from `django.views.generic.CreateView` and pass attrs `model` , it's fields attr `fields` , `template_name` , `success_url` 
+ 2. You should use the `form` provided in the template context to access the form 
+ 

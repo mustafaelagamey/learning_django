@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from .forms import ReviewForm, FeedbackForm
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView, FormView
+from django.views.generic import TemplateView, ListView, DetailView, FormView, CreateView
 from .models import Feedback
 
 
@@ -51,7 +51,15 @@ def feedback(request):
             return redirect('reviews:thank-you')
     else:
         feedback_form = FeedbackForm()
-    return render(request, 'reviews/feedback.html', {"feedback_form": feedback_form})
+    return render(request, 'reviews/feedback.html', {"form": feedback_form})
+
+
+class FeedbackCreateView(CreateView):
+    model = Feedback
+    fields = '__all__'
+
+    template_name = 'reviews/feedback.html'
+    success_url = reverse_lazy('reviews:thank-you')
 
 
 class ThankYouView(TemplateView):
