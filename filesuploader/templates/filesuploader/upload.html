@@ -3,5 +3,9 @@
     Uploading File
 {% endblock %}
 {% block content %}
-    Uploading Form Implementation
+    <form action="{% url 'filesuploader:upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <input type="file" name="file">
+        <button>Upload</button>
+    </form>
 {% endblock %}

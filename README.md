@@ -602,3 +602,8 @@
  1. In views.py , Add class that inherit from `django.views.generic.CreateView` and pass attrs `model` , it's fields attr `fields` , `template_name` , `success_url` 
  2. You should use the `form` provided in the template context to access the form 
  
+ ##### Simple File uploader 
+ 1. Create post multipart form with csrf and upload input
+ 2. Receive this form at django and loop through the posted file method `request.FILES['file_inp_name'].chuncks()` and put all of it into one file
+ 3. The written file is the original file
+ 
