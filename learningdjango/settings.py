@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'challenges',
     'books',
     'reviews',
+    'filesuploader',
     # default apps
     'django.contrib.admin',
     'django.contrib.auth',

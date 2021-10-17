@@ -20,7 +20,8 @@ from django.urls import path, include, reverse
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('challenges/', include("challenges.urls")),
-    path('books/', include("books.urls" , namespace='books')),
-    path('reviews/', include("reviews.urls" , namespace='reviews')),
+    path('books/', include("books.urls", namespace='books')),
+    path('reviews/', include("reviews.urls", namespace='reviews')),
+    path('filesuploader/', include("filesuploader.urls", namespace='filesuploader')),
     path('', lambda r: redirect("all-challenges")),
 ]
