@@ -592,3 +592,9 @@
 1. In views.py , Add class that inherit from `django.views.generic.DetailView` , And add attrs `model` and `template_name` to link View to related model and related template because this is template view
 2. Use method `as_view` to add view url because this is type of template view , and add parameter pk in uri ( detail view expect this parameter to get object by it) 
 3. In template you can use model name in small case or `object` that represent to current selected record
+
+##### Using Form View 
+1. In views.py , Add class that inherit from `django.views.generic.FormView` , And attrs `template_name` ,`form_class` for Form Class , `success_url` for redirecting after valid form , And method `form_valid` , `form_invalid` for form validation and logic after validation
+
+2. You can use the `form` provided in the template context to access the form 
+ 

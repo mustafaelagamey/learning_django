@@ -1,8 +1,9 @@
 from django.db.models.functions import Length
 from django.shortcuts import render, redirect
+from django.urls import reverse, reverse_lazy
 from .forms import ReviewForm, FeedbackForm
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, FormView
 from .models import Feedback
 
 
@@ -18,6 +19,16 @@ class ReviewView(View):
             return redirect('reviews:thank-you')
 
         return render(request, 'reviews/review.html', {"form": form})
+
+
+class ReviewFormView(FormView):
+    form_class = ReviewForm
+    template_name = 'reviews/review.html'
+    success_url = reverse_lazy('reviews:thank-you')
+
+    def form_valid(self, form):
+        # send email
+        return super(ReviewFormView, self).form_valid(form)
 
 
 # Create your views here.
