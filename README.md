@@ -612,3 +612,8 @@
  2. Create View with get to generate Form and pass it to template and post to create form instance from the posted data then validate the form
  3. In template just render the form automatically
  
+##### Django Model uploader - Simple View  
+1. Create Upload Model with field of type `FileField`
+2. Create Form from that model
+3. Create Simple View with methods get and post to render form template and receive posted data to validate it and save the form
+4. You can change the Media folder from project settings using variable `MEDIA_ROOT` 
