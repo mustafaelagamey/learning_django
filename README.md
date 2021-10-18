@@ -607,3 +607,8 @@
  2. Receive this form at django and loop through the posted file method `request.FILES['file_inp_name'].chuncks()` and put all of it into one file
  3. The written file is the original file
  
+ ##### Django Form uploader 
+ 1. Create djanog Form with field `FileField`
+ 2. Create View with get to generate Form and pass it to template and post to create form instance from the posted data then validate the form
+ 3. In template just render the form automatically
+ 
