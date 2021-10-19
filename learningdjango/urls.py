@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include, reverse
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +26,4 @@ urlpatterns = [
     path('reviews/', include("reviews.urls", namespace='reviews')),
     path('filesuploader/', include("filesuploader.urls", namespace='filesuploader')),
     path('', lambda r: redirect("all-challenges")),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

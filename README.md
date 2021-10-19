@@ -622,3 +622,10 @@
 ##### Django Create View uploader 
 1. Create view that inherit from `CreateView` and pass to it the fields `model , template_name , fields , success_url `
  2. Use this View directly in url 
+
+##### Displaying image file 
+1. Add `MEDIA_URL` in project settings and should be like `\url_name\ `
+2. In project urls append to patterns `static(MEDIA_URL , document_root = MEDIA_ROOT)`
+    * Note : `static` exists in  `django.conf.urls.static`
+    * Note : For better code you can use `from django.conf import settings` and use `settings.MEDIA_URL , settings.MEDIA_ROOT`
+3. In template use `file_field.url` to generate the file url
