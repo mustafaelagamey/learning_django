@@ -8,7 +8,10 @@
         <h5>Name : {{ feedback.user_name }}</h5>
         <p>{{ feedback.comment }}</p>
     </div>
-
+    <form action="{% url 'reviews:session-fav-feedback' feedback.pk %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary">Mark as session favourite</button>
+    </form>
     <hr>
     <div>
         <a class="btn btn-success" href="{% url 'reviews:list-feedbacks' %}">Show All feedbacks</a>

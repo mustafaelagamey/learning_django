@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import review, feedback, ReviewView, ThankYouView, FeedbackListView, FeedbackDetailView, ReviewFormView, \
-    FeedbackCreateView
+    FeedbackCreateView, SessionFavFeedback
 
 app_name = 'reviews'
 
@@ -13,4 +13,5 @@ urlpatterns = [
     path('thank-you', ThankYouView.as_view(), name='thank-you'),
     path('list-feedbacks', FeedbackListView.as_view(), name='list-feedbacks'),
     path('feedback-detail/<int:pk>', FeedbackDetailView.as_view(), name='feedback-detail'),
+    path('session-fav-feedback/<int:pk>', SessionFavFeedback.as_view(), name='session-fav-feedback'),
 ]

@@ -85,3 +85,9 @@ class FeedbackListView(ListView):
 class FeedbackDetailView(DetailView):
     model = Feedback
     template_name = 'reviews/feedback_detail.html'
+
+
+class SessionFavFeedback(View):
+    def post(self, request, pk):
+        # mark as favourite
+        return redirect('reviews:feedback-detail', pk=pk)
