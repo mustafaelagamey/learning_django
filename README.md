@@ -629,3 +629,8 @@
     * Note : `static` exists in  `django.conf.urls.static`
     * Note : For better code you can use `from django.conf import settings` and use `settings.MEDIA_URL , settings.MEDIA_ROOT`
 3. In template use `file_field.url` to generate the file url
+
+##### Using django session data 
+1. To put data , use `request.session['key']` dict to save the data
+2. To retrieve data from session use `request.session['key']`
+    * Note : the data should be serializable like str and numbers not objects

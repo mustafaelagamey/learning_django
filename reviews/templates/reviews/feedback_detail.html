@@ -6,12 +6,18 @@
     <div>
         <h4>Feedback from {{ feedback.email }}</h4>
         <h5>Name : {{ feedback.user_name }}</h5>
+
         <p>{{ feedback.comment }}</p>
+        {% if is_session_favourite %}
+            <span class="badge bg-danger">session Favourite</span>
+        {% else %}
+            <form action="{% url 'reviews:session-fav-feedback' feedback.pk %}" method="post">
+                {% csrf_token %}
+                <button class="btn btn-primary">Mark as session favourite</button>
+            </form>
+        {% endif %}
     </div>
-    <form action="{% url 'reviews:session-fav-feedback' feedback.pk %}" method="post">
-        {% csrf_token %}
-        <button class="btn btn-primary">Mark as session favourite</button>
-    </form>
+
     <hr>
     <div>
         <a class="btn btn-success" href="{% url 'reviews:list-feedbacks' %}">Show All feedbacks</a>

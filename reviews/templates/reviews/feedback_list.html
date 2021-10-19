@@ -10,6 +10,9 @@
         {% for feedback in feedbacks %}
             <div class="col-6">
                 <a href="{{ feedback.get_absolute_url }}">{{ feedback.comment }}</a>
+                {% if feedback.pk == session_favourite_review %}
+                    <span class="badge bg-danger">session Favourite</span>
+                {% endif %}
             </div>
             <div class="col-6"> {{ feedback.user_name }}</div>
         {% endfor %}

@@ -76,6 +76,11 @@ class FeedbackListView(ListView):
     template_name = 'reviews/feedback_list.html'
     context_object_name = 'feedbacks'
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(FeedbackListView, self).get_context_data()
+        context["session_favourite_review"] = self.request.session.get("session_favourite_review")
+        return context
+
     def get_queryset(self):
         query_set = super(FeedbackListView, self).get_queryset()
         # returns only usernames more than 2
@@ -86,8 +91,16 @@ class FeedbackDetailView(DetailView):
     model = Feedback
     template_name = 'reviews/feedback_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(FeedbackDetailView, self).get_context_data(**kwargs)
+        context["is_session_favourite"] = self.request.session.get("session_favourite_review") == self.object.pk
+        return context
+
+
+
+
 
 class SessionFavFeedback(View):
     def post(self, request, pk):
-        # mark as favourite
+        request.session["session_favourite_review"] = pk
         return redirect('reviews:feedback-detail', pk=pk)
