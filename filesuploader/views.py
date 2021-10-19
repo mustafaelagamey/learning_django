@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from filesuploader.forms import FileUploadForm, FileUploadModelForm
 from filesuploader.models import FileUploadModel
 
@@ -60,3 +60,8 @@ class UploadFileCreateView(CreateView):
     template_name = 'filesuploader/upload-via-django-form.html'
     fields = '__all__'
     success_url = reverse_lazy('filesuploader:upload-via-django-create-view')
+
+
+class UploadFileListView(ListView):
+    model = FileUploadModel
+    template_name = 'filesuploader/list-uploaded-files.html'
