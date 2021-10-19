@@ -614,6 +614,7 @@
  
 ##### Django Model uploader - Simple View  
 1. Create Upload Model with field of type `FileField`
+    * Note : If you want to upload image , you will have to use field `ImageField` and install python image package  `Pillow` to process image fields
 2. Create Form from that model
 3. Create Simple View with methods get and post to render form template and receive posted data to validate it and save the form
 4. You can change the Media folder from project settings using variable `MEDIA_ROOT` 
