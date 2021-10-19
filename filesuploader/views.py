@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic import CreateView
 from filesuploader.forms import FileUploadForm, FileUploadModelForm
+from filesuploader.models import FileUploadModel
 
 
 def store_file(file):
@@ -50,3 +53,10 @@ class UploadFileViaModel(View):
 
         else:
             return render(request, 'filesuploader/upload-via-django-form.html', {'form': form})
+
+
+class UploadFileCreateView(CreateView):
+    model = FileUploadModel
+    template_name = 'filesuploader/upload-via-django-form.html'
+    fields = '__all__'
+    success_url = reverse_lazy('filesuploader:upload-via-django-create-view')
